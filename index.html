@@ -4,105 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>G‘uzor Ads — Marketing Agency</title>
+<meta name="description" content="G‘uzor Ads — SMM, Target reklama, kontent va grafik dizayn xizmatlari. Biznesingizni raqamli dunyoda rivojlantiramiz.">
+<meta name="theme-color" content="#07111f">
+<meta property="og:title" content="G‘uzor Ads — Marketing Agency">
+<meta property="og:description" content="SMM, Target, Kontent va Grafik dizayn xizmatlari. Bepul maslahat oling!">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%2300aaff'/%3E%3Cstop offset='1' stop-color='%236c5ce7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --bg:#07111f;
+    --bg-2:#091524;
+    --card:#0d1c30;
+    --card-2:#091321;
+    --line:#1c3048;
+    --text:#ffffff;
+    --muted:#9eacbe;
+    --muted-2:#718198;
+    --accent:#00aaff;
+    --accent-2:#6c5ce7;
+    --primary:#008cff;
+    --radius:20px;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#07111f;
-    color:white;
+    font-family:"Manrope", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
+    overflow-x:hidden;
 }
+
+a{
+    color:inherit;
+}
+
+img, svg{
+    display:block;
+    max-width:100%;
+}
+
+/* ---------- Header ---------- */
 
 header{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
-    padding:18px 7%;
+    padding:16px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(7,17,31,.9);
+    background:rgba(7,17,31,.85);
     backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;
+    transition:.3s;
+}
+
+header.scrolled{
+    border-bottom-color:var(--line);
+    padding-top:12px;
+    padding-bottom:12px;
 }
 
 .logo{
-    font-size:24px;
+    font-size:22px;
     font-weight:800;
-    color:#00aaff;
+    color:var(--accent);
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    letter-spacing:.5px;
+}
+
+.logo-mark{
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    color:white;
+    font-size:19px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:26px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
     font-size:15px;
+    font-weight:500;
+    transition:.2s;
 }
 
 nav a:hover{
-    color:#00aaff;
+    color:var(--accent);
 }
+
+nav .nav-cta{
+    padding:10px 18px;
+    border-radius:10px;
+    background:var(--primary);
+    font-weight:700;
+}
+
+nav .nav-cta:hover{
+    color:white;
+    box-shadow:0 8px 24px #008cff55;
+}
+
+.menu-btn{
+    display:none;
+    width:44px;
+    height:44px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    font-size:22px;
+}
+
+/* ---------- Hero ---------- */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
+    gap:40px;
     padding:130px 7% 70px;
+    position:relative;
     background:
     radial-gradient(circle at 80% 30%,#005cff55,transparent 35%),
     radial-gradient(circle at 20% 70%,#00aaff33,transparent 30%);
 }
 
 .hero-content{
-    max-width:800px;
+    flex:1 1 560px;
+    max-width:780px;
 }
 
 .badge{
     display:inline-block;
     padding:8px 15px;
-    border:1px solid #00aaff;
+    border:1px solid var(--accent);
     border-radius:30px;
-    color:#00aaff;
-    margin-bottom:20px;
+    color:var(--accent);
+    margin-bottom:22px;
+    font-size:14px;
+    font-weight:600;
 }
 
 h1{
-    font-size:clamp(45px,7vw,82px);
+    font-size:clamp(40px,6.5vw,78px);
     line-height:1.05;
     margin-bottom:25px;
+    font-weight:800;
 }
 
 .gradient{
-    background:linear-gradient(90deg,#00aaff,#6c5ce7);
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
     -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
 }
 
 .hero p{
     color:#b8c5d6;
     font-size:19px;
-    max-width:650px;
+    max-width:620px;
     margin-bottom:35px;
 }
 
 .btn{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
     padding:15px 25px;
     border-radius:12px;
     text-decoration:none;
-    font-weight:bold;
-    margin-right:10px;
+    font-weight:700;
+    font-size:16px;
     transition:.3s;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+}
+
+.btn-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .primary{
-    background:#008cff;
+    background:var(--primary);
     color:white;
 }
 
@@ -114,132 +230,708 @@ h1{
 .secondary{
     border:1px solid #31445e;
     color:white;
+    background:transparent;
 }
+
+.secondary:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+}
+
+.hero-visual{
+    flex:0 1 420px;
+    position:relative;
+    min-height:420px;
+}
+
+.float-card{
+    position:absolute;
+    background:linear-gradient(145deg,#102641e6,#091827e6);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px 20px;
+    box-shadow:0 20px 50px #0008;
+    animation:float 6s ease-in-out infinite;
+}
+
+.float-card small{
+    color:var(--muted);
+    display:block;
+    font-size:13px;
+}
+
+.float-card strong{
+    font-size:26px;
+}
+
+.fc-1{ top:10px; left:0; width:240px; }
+.fc-2{ top:150px; right:0; width:220px; animation-delay:-2s; }
+.fc-3{ bottom:10px; left:40px; width:260px; animation-delay:-4s; }
+
+.bars{
+    display:flex;
+    align-items:flex-end;
+    gap:7px;
+    height:70px;
+    margin-top:12px;
+}
+
+.bars span{
+    flex:1;
+    border-radius:6px 6px 2px 2px;
+    background:linear-gradient(180deg,var(--accent),var(--accent-2));
+}
+
+.chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:10px;
+}
+
+.chip{
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:20px;
+    background:#00aaff22;
+    color:var(--accent);
+    font-weight:600;
+}
+
+@keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-12px); }
+}
+
+/* ---------- Sections ---------- */
 
 section{
     padding:90px 7%;
+    scroll-margin-top:60px;
 }
 
 .section-title{
     text-align:center;
-    font-size:42px;
+    font-size:clamp(30px,4vw,42px);
+    line-height:1.2;
     margin-bottom:15px;
+    font-weight:800;
 }
 
 .section-subtitle{
     text-align:center;
     color:#91a0b4;
-    margin-bottom:50px;
+    margin:0 auto 50px;
+    max-width:620px;
+    font-size:17px;
 }
 
-.services{
+.grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
 .card{
-    background:linear-gradient(145deg,#0d1c30,#091321);
-    border:1px solid #1c3048;
+    background:linear-gradient(145deg,var(--card),var(--card-2));
+    border:1px solid var(--line);
     padding:30px;
-    border-radius:20px;
+    border-radius:var(--radius);
     transition:.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-    border-color:#00aaff;
+    border-color:var(--accent);
 }
 
 .icon{
-    font-size:40px;
+    width:60px;
+    height:60px;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    font-size:30px;
+    background:#00aaff18;
     margin-bottom:18px;
 }
 
 .card h3{
     margin-bottom:10px;
-    font-size:22px;
+    font-size:21px;
 }
 
 .card p{
-    color:#9eacbe;
+    color:var(--muted);
 }
 
-.about{
-    background:#091524;
+/* ---------- Why us ---------- */
+
+.why{
+    background:var(--bg-2);
 }
 
-.about-box{
-    max-width:850px;
+.why-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+    max-width:1150px;
     margin:auto;
-    text-align:center;
 }
 
-.about-box p{
-    color:#aebccc;
-    font-size:18px;
+.why-wrap .section-title,
+.why-wrap .section-subtitle{
+    text-align:left;
+    margin-left:0;
+}
+
+.why-list{
+    display:grid;
+    gap:16px;
+}
+
+.why-item{
+    display:flex;
+    gap:16px;
+    padding:20px;
+    border-radius:16px;
+    background:var(--card);
+    border:1px solid var(--line);
+}
+
+.why-item .check{
+    flex:none;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    font-weight:800;
+}
+
+.why-item h4{
+    font-size:17px;
+    margin-bottom:3px;
+}
+
+.why-item p{
+    color:var(--muted);
+    font-size:15px;
 }
 
 .stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:40px;
+    gap:16px;
+    margin-top:30px;
 }
 
 .stat{
     text-align:center;
-    padding:25px;
+    padding:22px 10px;
     background:#0e1d30;
     border-radius:15px;
+    border:1px solid var(--line);
+    color:var(--muted);
+    font-size:14px;
 }
 
 .stat strong{
     display:block;
-    font-size:35px;
-    color:#00aaff;
+    font-size:32px;
+    color:var(--accent);
 }
 
-.contact{
+/* ---------- Process ---------- */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    counter-reset:step;
+}
+
+.step{
+    position:relative;
+    padding:30px 26px;
+    border-radius:var(--radius);
+    border:1px dashed #2a4466;
+}
+
+.step::before{
+    counter-increment:step;
+    content:"0" counter(step);
+    display:block;
+    font-size:44px;
+    font-weight:800;
+    line-height:1;
+    margin-bottom:14px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.step h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.step p{
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* ---------- Packages ---------- */
+
+.packages{
+    background:var(--bg-2);
+}
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:22px;
+    max-width:1150px;
+    margin:auto;
+}
+
+.price{
+    display:flex;
+    flex-direction:column;
+    padding:34px 30px;
+    border-radius:24px;
+    background:linear-gradient(145deg,var(--card),var(--card-2));
+    border:1px solid var(--line);
+    position:relative;
+}
+
+.price.featured{
+    border-color:var(--accent);
+    box-shadow:0 20px 60px #008cff22;
+}
+
+.price .tag{
+    position:absolute;
+    top:-13px;
+    left:30px;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+}
+
+.price h3{
+    font-size:22px;
+}
+
+.price .for{
+    color:var(--muted);
+    font-size:15px;
+    margin:4px 0 22px;
+}
+
+.price ul{
+    list-style:none;
+    display:grid;
+    gap:11px;
+    margin-bottom:28px;
+    flex:1;
+}
+
+.price li{
+    display:flex;
+    gap:10px;
+    color:#c9d4e2;
+    font-size:15px;
+}
+
+.price li::before{
+    content:"✓";
+    color:var(--accent);
+    font-weight:800;
+}
+
+.price .btn{
+    justify-content:center;
+}
+
+.note{
+    text-align:center;
+    color:var(--muted-2);
+    margin-top:28px;
+    font-size:15px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-list{
+    max-width:800px;
+    margin:auto;
+    display:grid;
+    gap:12px;
+}
+
+details{
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:var(--card);
+    padding:0 22px;
+    transition:.2s;
+}
+
+details[open]{
+    border-color:#2a4f7a;
+}
+
+summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 0;
+    font-weight:700;
+    font-size:17px;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    color:var(--accent);
+    font-size:24px;
+    line-height:1;
+    transition:.2s;
+}
+
+details[open] summary::after{
+    transform:rotate(45deg);
+}
+
+details p{
+    color:var(--muted);
+    padding-bottom:20px;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-wrap{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:24px;
+    padding:40px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#102641,#091827);
+    border:1px solid var(--line);
+}
+
+.contact-info .section-title{
+    text-align:left;
+}
+
+.contact-info > p{
+    color:#aebccc;
+    margin-bottom:26px;
+}
+
+.contact-links{
+    display:grid;
+    gap:12px;
+}
+
+.contact-link{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 18px;
+    border-radius:14px;
+    background:#0a1a2c;
+    border:1px solid var(--line);
+    text-decoration:none;
+    transition:.2s;
+}
+
+.contact-link:hover{
+    border-color:var(--accent);
+}
+
+.contact-link span:first-child{
+    font-size:24px;
+}
+
+.contact-link small{
+    display:block;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.contact-link b{
+    font-size:16px;
+}
+
+form{
+    display:grid;
+    gap:14px;
+    padding:28px;
+    border-radius:20px;
+    background:#07111fcc;
+    border:1px solid var(--line);
+}
+
+form h3{
+    font-size:22px;
+}
+
+label{
+    display:grid;
+    gap:6px;
+    font-size:14px;
+    color:var(--muted);
+    font-weight:600;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid #23395a;
+    background:#0b1a2d;
+    color:white;
+    font-family:inherit;
+    font-size:16px;
+    outline:none;
+    transition:.2s;
+}
+
+input:focus, select:focus, textarea:focus{
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px #00aaff22;
+}
+
+textarea{
+    resize:vertical;
+    min-height:100px;
+}
+
+form .btn{
+    justify-content:center;
+    width:100%;
+}
+
+.form-msg{
+    display:none;
+    font-size:14px;
+    color:#7ee0a8;
     text-align:center;
 }
 
-.contact-box{
-    max-width:700px;
-    margin:auto;
-    padding:45px 25px;
-    border-radius:25px;
-    background:linear-gradient(145deg,#102641,#091827);
+.form-msg.show{
+    display:block;
 }
 
-.contact-box p{
-    color:#aebccc;
-    margin:15px 0 30px;
-}
+/* ---------- Footer ---------- */
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#718198;
+    padding:40px 7% 30px;
+    color:var(--muted-2);
     border-top:1px solid #1b2c40;
 }
 
-@media(max-width:700px){
-    nav{
+.footer-top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:24px;
+}
+
+.footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#9eacbe;
+}
+
+.footer-links a:hover{
+    color:var(--accent);
+}
+
+.copy{
+    text-align:center;
+    font-size:14px;
+}
+
+/* ---------- Floating Telegram ---------- */
+
+.tg-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#229ed9;
+    box-shadow:0 10px 30px #229ed966;
+    transition:.3s;
+}
+
+.tg-float:hover{
+    transform:scale(1.08);
+}
+
+.tg-float svg{
+    width:28px;
+    height:28px;
+}
+
+/* ---------- Reveal animation ---------- */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .float-card{ animation:none; }
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:1000px){
+    .hero-visual{
         display:none;
+    }
+
+    .why-wrap,
+    .contact-wrap{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:800px){
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:fixed;
+        top:72px;
+        left:16px;
+        right:16px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        padding:14px;
+        border-radius:18px;
+        background:#0b1829;
+        border:1px solid var(--line);
+        box-shadow:0 20px 50px #000a;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-10px);
+        transition:.25s;
+    }
+
+    nav.open{
+        opacity:1;
+        visibility:visible;
+        transform:none;
+    }
+
+    nav a{
+        padding:12px 14px;
+        border-radius:10px;
+        font-size:16px;
+    }
+
+    nav a:hover{
+        background:#00aaff14;
+    }
+
+    nav .nav-cta{
+        text-align:center;
+        margin-top:6px;
+    }
+}
+
+@media(max-width:700px){
+    header{
+        padding:14px 16px;
+    }
+
+    section{
+        padding:70px 16px;
     }
 
     .hero{
         text-align:center;
+        padding:120px 16px 60px;
+        min-height:auto;
     }
 
     .hero p{
         margin-left:auto;
         margin-right:auto;
+        font-size:17px;
+    }
+
+    .btn-row{
+        justify-content:center;
+    }
+
+    .why-wrap .section-title,
+    .why-wrap .section-subtitle,
+    .contact-info .section-title{
+        text-align:center;
     }
 
     .stats{
         grid-template-columns:1fr;
+    }
+
+    .contact-wrap{
+        padding:22px 16px;
+    }
+
+    form{
+        padding:20px 16px;
+    }
+
+    footer{
+        padding:30px 16px 90px;
+    }
+
+    .footer-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        justify-content:center;
     }
 }
 </style>
@@ -247,16 +939,24 @@ footer{
 
 <body>
 
-<header>
-    <div class="logo">G‘UZOR ADS</div>
+<header id="header">
+    <a class="logo" href="#home">
+        <span class="logo-mark">G</span>
+        G‘UZOR ADS
+    </a>
 
-    <nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menyuni ochish" aria-expanded="false">☰</button>
+
+    <nav id="nav">
         <a href="#home">Bosh sahifa</a>
         <a href="#services">Xizmatlar</a>
-        <a href="#about">Biz haqimizda</a>
-        <a href="#contact">Aloqa</a>
+        <a href="#process">Ish jarayoni</a>
+        <a href="#packages">Paketlar</a>
+        <a href="#faq">Savollar</a>
+        <a class="nav-cta" href="#contact">Bog‘lanish</a>
     </nav>
 </header>
+
 
 <section class="hero" id="home">
     <div class="hero-content">
@@ -275,50 +975,82 @@ footer{
             tanitishga yordam beradi.
         </p>
 
-        <a class="btn primary"
-           href="https://t.me/GuzorAds"
-           target="_blank">
-           💬 Bepul maslahat
-        </a>
+        <div class="btn-row">
+            <a class="btn primary" href="https://t.me/GuzorAds" target="_blank" rel="noopener">
+                💬 Bepul maslahat
+            </a>
+            <a class="btn secondary" href="#services">
+                Xizmatlarni ko‘rish
+            </a>
+        </div>
 
-        <a class="btn secondary"
-           href="#services">
-           Xizmatlarni ko‘rish
-        </a>
+    </div>
 
+    <div class="hero-visual" aria-hidden="true">
+        <div class="float-card fc-1">
+            <small>Reklama natijalari</small>
+            <strong>Qamrov ↑</strong>
+            <div class="bars">
+                <span style="height:30%"></span>
+                <span style="height:45%"></span>
+                <span style="height:40%"></span>
+                <span style="height:62%"></span>
+                <span style="height:75%"></span>
+                <span style="height:100%"></span>
+            </div>
+        </div>
+
+        <div class="float-card fc-2">
+            <small>Yangi murojaat</small>
+            <strong>📩 Lead</strong>
+            <div class="chip-row">
+                <span class="chip">Instagram</span>
+                <span class="chip">Telegram</span>
+            </div>
+        </div>
+
+        <div class="float-card fc-3">
+            <small>Kontent rejasi</small>
+            <strong>🎬 Reels · Stories</strong>
+            <div class="chip-row">
+                <span class="chip">Post</span>
+                <span class="chip">Banner</span>
+                <span class="chip">Video</span>
+            </div>
+        </div>
     </div>
 </section>
 
 
 <section id="services">
 
-    <h2 class="section-title">Bizning xizmatlar</h2>
+    <h2 class="section-title reveal">Bizning xizmatlar</h2>
 
-    <p class="section-subtitle">
-        Biznesingiz uchun kerak bo‘ladigan asosiy marketing xizmatlari
+    <p class="section-subtitle reveal">
+        Biznesingiz uchun kerak bo‘ladigan asosiy marketing xizmatlari — bir joyda
     </p>
 
-    <div class="services">
+    <div class="grid">
 
-        <div class="card">
+        <div class="card reveal">
             <div class="icon">📱</div>
             <h3>SMM</h3>
             <p>
-                Instagram va boshqa ijtimoiy tarmoqlardagi
+                Instagram, Telegram va boshqa ijtimoiy tarmoqlardagi
                 sahifangizni professional yuritamiz.
             </p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
             <div class="icon">🎯</div>
-            <h3>Target</h3>
+            <h3>Target reklama</h3>
             <p>
                 Reklamangizni aynan sizning mahsulotingizga
                 qiziqadigan auditoriyaga yetkazamiz.
             </p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
             <div class="icon">🎬</div>
             <h3>Kontent</h3>
             <p>
@@ -327,7 +1059,7 @@ footer{
             </p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
             <div class="icon">🎨</div>
             <h3>Grafik dizayn</h3>
             <p>
@@ -336,37 +1068,89 @@ footer{
             </p>
         </div>
 
+        <div class="card reveal">
+            <div class="icon">✨</div>
+            <h3>Brending</h3>
+            <p>
+                Logotip, rang palitrasi va yagona uslub —
+                brendingiz esda qolarli bo‘lishi uchun.
+            </p>
+        </div>
+
+        <div class="card reveal">
+            <div class="icon">💡</div>
+            <h3>Marketing maslahat</h3>
+            <p>
+                Biznesingizni tahlil qilib, qaysi kanal va
+                qanday strategiya foyda berishini aytamiz.
+            </p>
+        </div>
+
     </div>
 </section>
 
 
-<section class="about" id="about">
+<section class="why" id="about">
 
-    <div class="about-box">
+    <div class="why-wrap">
 
-        <h2 class="section-title">G‘uzor Ads haqida</h2>
+        <div class="reveal">
+            <h2 class="section-title">Nega aynan G‘uzor Ads?</h2>
 
-        <p>
-            G‘uzor Ads Marketing Agency — bizneslar va shaxsiy
-            brendlarni internetda rivojlantirishga ixtisoslashgan
-            zamonaviy marketing agentligi.
-        </p>
+            <p class="section-subtitle">
+                G‘uzor Ads Marketing Agency — bizneslar va shaxsiy
+                brendlarni internetda rivojlantirishga ixtisoslashgan
+                zamonaviy marketing agentligi.
+            </p>
 
-        <div class="stats">
+            <div class="stats">
+                <div class="stat">
+                    <strong>6</strong>
+                    Xizmat yo‘nalishi
+                </div>
+                <div class="stat">
+                    <strong>24/7</strong>
+                    Aloqa
+                </div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    Individual yondashuv
+                </div>
+            </div>
+        </div>
 
-            <div class="stat">
-                <strong>4+</strong>
-                Xizmat yo‘nalishi
+        <div class="why-list">
+
+            <div class="why-item reveal">
+                <span class="check">✓</span>
+                <div>
+                    <h4>Individual strategiya</h4>
+                    <p>Har bir biznes uchun alohida reja — tayyor shablonlarsiz.</p>
+                </div>
             </div>
 
-            <div class="stat">
-                <strong>24/7</strong>
-                Aloqa
+            <div class="why-item reveal">
+                <span class="check">✓</span>
+                <div>
+                    <h4>Shaffof hisobot</h4>
+                    <p>Reklama byudjeti qayerga ketayotgani va natijalarni ko‘rib borasiz.</p>
+                </div>
             </div>
 
-            <div class="stat">
-                <strong>100%</strong>
-                Individual yondashuv
+            <div class="why-item reveal">
+                <span class="check">✓</span>
+                <div>
+                    <h4>Mahalliy bozorni bilamiz</h4>
+                    <p>O‘zbekiston auditoriyasi va uning qiziqishlarini yaxshi tushunamiz.</p>
+                </div>
+            </div>
+
+            <div class="why-item reveal">
+                <span class="check">✓</span>
+                <div>
+                    <h4>Tezkor aloqa</h4>
+                    <p>Savollaringizga Telegram va telefon orqali tez javob beramiz.</p>
+                </div>
             </div>
 
         </div>
@@ -376,29 +1160,207 @@ footer{
 </section>
 
 
-<section class="contact" id="contact">
+<section id="process">
 
-    <div class="contact-box">
+    <h2 class="section-title reveal">Qanday ishlaymiz?</h2>
 
-        <h2 class="section-title">
-            Biznesingizni birga rivojlantiramiz 🚀
-        </h2>
+    <p class="section-subtitle reveal">
+        To‘rt oddiy qadam — tanishuvdan natijagacha
+    </p>
 
-        <p>
-            Marketing bo‘yicha bepul maslahat olish uchun
-            biz bilan bog‘laning.
-        </p>
+    <div class="steps">
 
-        <a class="btn primary"
-           href="https://t.me/GuzorAds"
-           target="_blank">
-           Telegram orqali yozish
-        </a>
+        <div class="step reveal">
+            <h3>Tanishuv</h3>
+            <p>Biznesingiz, mahsulotingiz va maqsadlaringiz haqida suhbatlashamiz.</p>
+        </div>
 
-        <a class="btn secondary"
-           href="tel:+998950083507">
-           📞 +998 95 008 35 07
-        </a>
+        <div class="step reveal">
+            <h3>Tahlil va reja</h3>
+            <p>Raqobatchilar va auditoriyani o‘rganib, aniq strategiya tuzamiz.</p>
+        </div>
+
+        <div class="step reveal">
+            <h3>Ishga tushirish</h3>
+            <p>Kontent tayyorlaymiz, sahifani yuritamiz va reklamani ishga tushiramiz.</p>
+        </div>
+
+        <div class="step reveal">
+            <h3>Natija va hisobot</h3>
+            <p>Natijalarni tahlil qilib, reklamani doimiy yaxshilab boramiz.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="packages" id="packages">
+
+    <h2 class="section-title reveal">Xizmat paketlari</h2>
+
+    <p class="section-subtitle reveal">
+        Biznesingiz hajmiga mos paketni tanlang
+    </p>
+
+    <div class="price-grid">
+
+        <div class="price reveal">
+            <h3>Start</h3>
+            <p class="for">Endi boshlayotgan bizneslar uchun</p>
+            <ul>
+                <li>Sahifa dizayni va sozlash</li>
+                <li>Oyiga 12 ta post</li>
+                <li>Stories dizayni</li>
+                <li>Oylik hisobot</li>
+            </ul>
+            <a class="btn secondary" href="#contact" data-package="Start">Narxini bilish</a>
+        </div>
+
+        <div class="price featured reveal">
+            <span class="tag">Eng ko‘p tanlanadi</span>
+            <h3>Biznes</h3>
+            <p class="for">O‘sishni xohlaydigan bizneslar uchun</p>
+            <ul>
+                <li>To‘liq SMM yuritish</li>
+                <li>Oyiga 20 ta post + Reels</li>
+                <li>Target reklama sozlash</li>
+                <li>Kontent reja va strategiya</li>
+                <li>Haftalik hisobot</li>
+            </ul>
+            <a class="btn primary" href="#contact" data-package="Biznes">Narxini bilish</a>
+        </div>
+
+        <div class="price reveal">
+            <h3>Premium</h3>
+            <p class="for">Katta natija kutayotgan brendlar uchun</p>
+            <ul>
+                <li>Biznes paketidagi hammasi</li>
+                <li>Brending va logotip</li>
+                <li>Professional video kontent</li>
+                <li>Bir nechta platformada reklama</li>
+                <li>Shaxsiy menejer</li>
+            </ul>
+            <a class="btn secondary" href="#contact" data-package="Premium">Narxini bilish</a>
+        </div>
+
+    </div>
+
+    <p class="note reveal">Narxlar biznesingiz ehtiyojiga qarab individual belgilanadi.</p>
+
+</section>
+
+
+<section id="faq">
+
+    <h2 class="section-title reveal">Ko‘p beriladigan savollar</h2>
+
+    <p class="section-subtitle reveal">
+        Javobini topa olmasangiz — bizga yozing
+    </p>
+
+    <div class="faq-list">
+
+        <details class="reveal">
+            <summary>Natija qancha vaqtda ko‘rinadi?</summary>
+            <p>Target reklamadan birinchi murojaatlar odatda bir necha kun ichida keladi. SMM orqali barqaror o‘sish esa 1–3 oy davomida shakllanadi.</p>
+        </details>
+
+        <details class="reveal">
+            <summary>Reklama byudjeti xizmat narxiga kiradimi?</summary>
+            <p>Yo‘q, reklama byudjeti alohida bo‘ladi. Biz sizga byudjetni to‘g‘ri rejalashtirish va samarali sarflashda yordam beramiz.</p>
+        </details>
+
+        <details class="reveal">
+            <summary>Boshqa shahardagi bizneslar bilan ishlaysizmi?</summary>
+            <p>Ha, barcha ishlar onlayn olib boriladi — O‘zbekistonning istalgan hududidagi bizneslar bilan ishlaymiz.</p>
+        </details>
+
+        <details class="reveal">
+            <summary>Faqat bitta xizmatni buyurtma qilsa bo‘ladimi?</summary>
+            <p>Albatta. Masalan, faqat dizayn yoki faqat target reklama xizmatini alohida buyurtma qilishingiz mumkin.</p>
+        </details>
+
+        <details class="reveal">
+            <summary>Maslahat pullikmi?</summary>
+            <p>Birinchi maslahat mutlaqo bepul. Biznesingizni ko‘rib chiqib, qaysi yo‘nalish foydali ekanini aytamiz.</p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<section id="contact">
+
+    <div class="contact-wrap reveal">
+
+        <div class="contact-info">
+            <h2 class="section-title">Biznesingizni birga rivojlantiramiz 🚀</h2>
+
+            <p>
+                Marketing bo‘yicha bepul maslahat olish uchun
+                biz bilan bog‘laning yoki arizani to‘ldiring.
+            </p>
+
+            <div class="contact-links">
+                <a class="contact-link" href="https://t.me/GuzorAds" target="_blank" rel="noopener">
+                    <span>✈️</span>
+                    <span>
+                        <small>Telegram</small>
+                        <b>@GuzorAds</b>
+                    </span>
+                </a>
+
+                <a class="contact-link" href="tel:+998950083507">
+                    <span>📞</span>
+                    <span>
+                        <small>Telefon</small>
+                        <b>+998 95 008 35 07</b>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <form id="leadForm" novalidate>
+            <h3>Ariza qoldiring</h3>
+
+            <label>
+                Ismingiz
+                <input type="text" name="name" placeholder="Ismingizni kiriting" required>
+            </label>
+
+            <label>
+                Telefon raqamingiz
+                <input type="tel" name="phone" placeholder="+998 __ ___ __ __" required>
+            </label>
+
+            <label>
+                Qiziqtirgan xizmat
+                <select name="service" id="serviceSelect">
+                    <option>SMM</option>
+                    <option>Target reklama</option>
+                    <option>Kontent</option>
+                    <option>Grafik dizayn</option>
+                    <option>Brending</option>
+                    <option>Marketing maslahat</option>
+                    <option>Start paketi</option>
+                    <option>Biznes paketi</option>
+                    <option>Premium paketi</option>
+                </select>
+            </label>
+
+            <label>
+                Xabar (ixtiyoriy)
+                <textarea name="message" placeholder="Biznesingiz haqida qisqacha yozing"></textarea>
+            </label>
+
+            <button class="btn primary" type="submit">✈️ Telegram orqali yuborish</button>
+
+            <p class="form-msg" id="formMsg">
+                ✅ Xabaringiz nusxalandi. Telegram ochilgach, uni chatga joylashtirib yuboring.
+            </p>
+        </form>
 
     </div>
 
@@ -406,8 +1368,116 @@ footer{
 
 
 <footer>
-    © 2026 G‘uzor Ads Marketing Agency. Barcha huquqlar himoyalangan.
+    <div class="footer-top">
+        <a class="logo" href="#home">
+            <span class="logo-mark">G</span>
+            G‘UZOR ADS
+        </a>
+
+        <div class="footer-links">
+            <a href="#services">Xizmatlar</a>
+            <a href="#process">Ish jarayoni</a>
+            <a href="#packages">Paketlar</a>
+            <a href="#faq">Savollar</a>
+            <a href="https://t.me/GuzorAds" target="_blank" rel="noopener">Telegram</a>
+        </div>
+    </div>
+
+    <p class="copy">
+        © <span id="year">2026</span> G‘uzor Ads Marketing Agency. Barcha huquqlar himoyalangan.
+    </p>
 </footer>
+
+
+<a class="tg-float" href="https://t.me/GuzorAds" target="_blank" rel="noopener" aria-label="Telegram orqali yozish">
+    <svg viewBox="0 0 24 24" fill="white" aria-hidden="true">
+        <path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6l-4.9-1.5c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/>
+    </svg>
+</a>
+
+
+<script>
+const header = document.getElementById("header");
+const nav = document.getElementById("nav");
+const menuBtn = document.getElementById("menuBtn");
+
+/* Header shadow on scroll */
+window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+});
+
+/* Mobile menu */
+menuBtn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    menuBtn.textContent = open ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", open);
+});
+
+nav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+    });
+});
+
+/* Reveal on scroll */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* Package buttons preselect the service in the form */
+const serviceSelect = document.getElementById("serviceSelect");
+
+document.querySelectorAll("[data-package]").forEach(btn => {
+    btn.addEventListener("click", () => {
+        serviceSelect.value = btn.dataset.package + " paketi";
+    });
+});
+
+/* Lead form: copy the request text and open Telegram */
+const form = document.getElementById("leadForm");
+const formMsg = document.getElementById("formMsg");
+
+form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const name = data.get("name").trim();
+    const phone = data.get("phone").trim();
+
+    if (!name || !phone) {
+        (name ? form.phone : form.name).focus();
+        return;
+    }
+
+    const text =
+        "Assalomu alaykum! Saytdan ariza:\n" +
+        "👤 Ism: " + name + "\n" +
+        "📞 Telefon: " + phone + "\n" +
+        "📌 Xizmat: " + data.get("service") +
+        (data.get("message").trim() ? "\n💬 Xabar: " + data.get("message").trim() : "");
+
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (err) {
+        /* Clipboard may be unavailable; Telegram still opens */
+    }
+
+    formMsg.classList.add("show");
+    window.open("https://t.me/GuzorAds", "_blank", "noopener");
+    form.reset();
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
