@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+:root{
+    --bg:#07111f;
+    --blue:#00aaff;
+    --violet:#6c5ce7;
+    --green:#7ee0a8;
+    --muted:#9eacbe;
+    --card:#0d1c30;
+    --line:#1c3048;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{font-family:"Manrope","Noto Color Emoji",Arial,sans-serif;color:#fff;position:relative}
+.abs{position:absolute}
+.center{left:0;right:0;text-align:center}
+.grad{background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* background */
+#grid{inset:0;background-image:linear-gradient(rgba(0,170,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(0,170,255,.07) 2px,transparent 2px);background-size:90px 90px}
+.blob{width:900px;height:900px;border-radius:50%;filter:blur(140px);opacity:.55}
+#b1{background:var(--blue)}
+#b2{background:var(--violet)}
+.dot{width:8px;height:8px;border-radius:50%;background:#fff}
+#vignette{inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(3,8,16,.85) 100%)}
+
+/* scene 1 */
+#logoMark{left:390px;top:560px;width:300px;height:300px;border-radius:80px;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:200px;box-shadow:0 40px 120px rgba(0,170,255,.45)}
+#ring{left:290px;top:460px;width:500px;height:500px;border-radius:50%;border:4px solid rgba(0,170,255,.6)}
+#brand{top:930px;font-weight:800;font-size:132px;letter-spacing:6px;white-space:nowrap}
+#brand span{display:inline-block}
+#tag{top:1110px;font-weight:700;font-size:56px;padding:0 80px;line-height:1.25}
+
+/* scene 2 */
+.q{left:80px;right:80px;font-weight:800;font-size:88px;line-height:1.15}
+#q1{top:380px}
+#q2{top:1290px}
+#chart{left:140px;top:760px;width:800px;height:440px}
+#chartCross{left:430px;top:830px;font-size:220px}
+
+/* scene 3 */
+#help{top:780px;font-weight:800;font-size:150px;line-height:1.05}
+#helpEmoji{top:560px;font-size:180px}
+#burst{left:540px;top:900px}
+.ray{left:-6px;top:-6px;width:12px;height:160px;border-radius:12px;background:linear-gradient(var(--blue),transparent);transform-origin:6px 6px}
+
+/* scene 4 */
+#svcTitle{top:200px;font-weight:800;font-size:110px}
+#svcSub{top:350px;font-weight:700;font-size:44px;color:var(--muted)}
+.card{left:70px;width:940px;height:270px;border-radius:44px;background:linear-gradient(135deg,rgba(13,28,48,.95),rgba(9,19,33,.95));border:3px solid var(--line);display:flex;align-items:center;padding:0 50px;gap:44px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.card .ic{flex:0 0 170px;height:170px;border-radius:44px;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;font-size:96px}
+.card h3{font-size:66px;font-weight:800;line-height:1.1}
+.card p{font-size:36px;font-weight:500;color:var(--muted);line-height:1.3;margin-top:10px}
+
+/* scene 5 */
+#whyTitle{top:330px;font-weight:800;font-size:120px}
+.why{left:110px;right:110px;height:200px;display:flex;align-items:center;gap:44px;font-weight:800;font-size:64px;line-height:1.15}
+.why .ck{flex:0 0 140px;height:140px;border-radius:50%;background:rgba(126,224,168,.12);border:4px solid var(--green);display:flex;align-items:center;justify-content:center}
+.why .ck svg{width:80px;height:80px}
+
+/* scene 6 */
+#ctaTop{top:440px;font-weight:800;font-size:96px;line-height:1.15;padding:0 70px}
+#ctaSub{top:720px;font-weight:700;font-size:52px;color:var(--muted)}
+#btn{left:140px;width:800px;top:930px;height:200px;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;gap:30px;font-weight:800;font-size:88px;box-shadow:0 30px 100px rgba(0,170,255,.5)}
+#btn svg{width:96px;height:96px}
+#btnRing{left:140px;width:800px;top:930px;height:200px;border-radius:100px;border:5px solid var(--blue)}
+#finger{left:700px;top:1080px;font-size:150px}
+#foot{top:1500px;font-weight:700;font-size:44px;color:var(--muted);letter-spacing:4px}
+#footBrand{top:1580px;font-weight:800;font-size:76px;letter-spacing:5px}
+</style>
+</head>
+<body>
+<div id="bg" class="abs" style="inset:0">
+    <div id="b1" class="abs blob"></div>
+    <div id="b2" class="abs blob"></div>
+    <div id="grid" class="abs"></div>
+    <div id="dots"></div>
+</div>
+
+<!-- S1 logo -->
+<div id="s1" class="abs" style="inset:0">
+    <div id="ring" class="abs"></div>
+    <div id="logoMark" class="abs">G</div>
+    <div id="brand" class="abs center"></div>
+    <div id="tag" class="abs center">🚀 Biznesingizni <span class="grad">onlaynda</span> o‘stiramiz!</div>
+</div>
+
+<!-- S2 problems -->
+<div id="s2" class="abs" style="inset:0">
+    <div id="q1" class="abs q center">Mijozlar sizni internetda <span class="grad">topa olmayaptimi?</span></div>
+    <svg id="chart" class="abs" viewBox="0 0 800 440">
+        <line x1="40" y1="400" x2="780" y2="400" stroke="#1c3048" stroke-width="6"/>
+        <g id="bars"></g>
+        <path id="trend" d="M60 90 L230 170 L400 230 L570 320 L740 380" fill="none" stroke="#ff5c7a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div id="q2" class="abs q center">Sahifangiz bor, lekin <span style="color:#ff5c7a">sotuv yo‘qmi?</span></div>
+</div>
+
+<!-- S3 help -->
+<div id="s3" class="abs" style="inset:0">
+    <div id="burst" class="abs"></div>
+    <div id="helpEmoji" class="abs center">💼</div>
+    <div id="help" class="abs center">Biz <span class="grad">yordam</span><br>beramiz!</div>
+</div>
+
+<!-- S4 services -->
+<div id="s4" class="abs" style="inset:0">
+    <div id="svcTitle" class="abs center">Xizmatlarimiz</div>
+    <div id="svcSub" class="abs center">Biznesingiz uchun to‘liq yechim</div>
+    <div class="abs card" id="c0" style="top:480px"><div class="ic">📱</div><div><h3>SMM</h3><p>Instagram va Telegram sahifalarini professional yuritish</p></div></div>
+    <div class="abs card" id="c1" style="top:790px"><div class="ic">🎯</div><div><h3>Target reklama</h3><p>Aynan sizning mijozingizga yetib boruvchi reklama</p></div></div>
+    <div class="abs card" id="c2" style="top:1100px"><div class="ic">🎬</div><div><h3>Kontent</h3><p>Reels, video va jozibali postlar</p></div></div>
+    <div class="abs card" id="c3" style="top:1410px"><div class="ic">🎨</div><div><h3>Grafik dizayn</h3><p>Logo, banner, post dizaynlari</p></div></div>
+</div>
+
+<!-- S5 why -->
+<div id="s5" class="abs" style="inset:0">
+    <div id="whyTitle" class="abs center">Nega <span class="grad">aynan biz?</span></div>
+    <div class="abs why" id="w0" style="top:640px"><div class="ck"><svg viewBox="0 0 24 24"><path class="tick" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#7ee0a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="24" stroke-dashoffset="24"/></svg></div><div>Natijaga yo‘naltirilgan ish</div></div>
+    <div class="abs why" id="w1" style="top:920px"><div class="ck"><svg viewBox="0 0 24 24"><path class="tick" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#7ee0a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="24" stroke-dashoffset="24"/></svg></div><div>Hamyonbop narxlar</div></div>
+    <div class="abs why" id="w2" style="top:1200px"><div class="ck"><svg viewBox="0 0 24 24"><path class="tick" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#7ee0a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="24" stroke-dashoffset="24"/></svg></div><div>Har bir mijozga individual yondashuv</div></div>
+</div>
+
+<!-- S6 CTA -->
+<div id="s6" class="abs" style="inset:0">
+    <div id="ctaTop" class="abs center">📩 <span class="grad">Bepul</span> konsultatsiya</div>
+    <div id="ctaSub" class="abs center">uchun hoziroq yozing:</div>
+    <div id="btnRing" class="abs"></div>
+    <div id="btn" class="abs"><svg viewBox="0 0 24 24"><path fill="#fff" d="M21.5 3.6 2.9 10.8c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.6zM9.6 14.2l8.7-5.5c.4-.3.8-.1.5.2l-7.3 6.6-.3 3.3-1.6-4.6z"/></svg>@GuzorAds</div>
+    <div id="finger" class="abs">👆</div>
+    <div id="foot" class="abs center">SMM · TARGET · KONTENT · DIZAYN</div>
+    <div id="footBrand" class="abs center grad">G‘UZOR ADS</div>
+</div>
+
+<div id="vignette" class="abs"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const clamp = (v,a=0,b=1) => Math.min(b,Math.max(a,v));
+const p = (t,s,d) => clamp((t-s)/d);
+const eo = x => 1-Math.pow(1-x,3);
+const eio = x => x<.5 ? 4*x*x*x : 1-Math.pow(-2*x+2,3)/2;
+const back = x => { const c=1.70158,c3=c+1; return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2); };
+const set = (el,o,tr) => { el.style.opacity=o; el.style.transform=tr||'none'; };
+
+// scene windows [start,end]
+const S = {s1:[0,4.4],s2:[4.4,9.6],s3:[9.6,12.4],s4:[12.4,21.8],s5:[21.8,27.4],s6:[27.4,34]};
+const DURATION = 34;
+
+// static setup
+const brand = "G‘UZOR ADS";
+$('brand').innerHTML = [...brand].map(c=>`<span>${c===' '?'&nbsp;':c}</span>`).join('');
+const letters = [...$('brand').children];
+letters.forEach((s,i)=>{ if(i>=7) s.classList.add('grad'); });
+
+let rnd = 7;
+const rand = () => (rnd = (rnd*16807)%2147483647)/2147483647;
+const dots = [];
+for(let i=0;i<46;i++){
+    const d=document.createElement('div'); d.className='abs dot'; $('dots').appendChild(d);
+    dots.push({el:d,x:rand()*1080,y:rand()*1920,s:.4+rand()*1.4,v:20+rand()*60,ph:rand()*6.28});
+}
+const bars=[]; const bh=[300,250,190,130,70];
+bh.forEach((h,i)=>{
+    const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    r.setAttribute('x',20+i*170); r.setAttribute('width',80); r.setAttribute('rx',14);
+    r.setAttribute('fill', i<2 ? '#00aaff' : '#1f3a5c'); $('bars').appendChild(r); bars.push({r,h});
+});
+const trend=$('trend'); const tl=trend.getTotalLength(); trend.style.strokeDasharray=tl;
+const rays=[];
+for(let i=0;i<16;i++){ const r=document.createElement('div'); r.className='abs ray'; $('burst').appendChild(r); rays.push(r); }
+
+function sceneAlpha(t,[a,b],fi=.35,fo=.35){
+    if(t<a||t>b) return 0;
+    return Math.min(clamp((t-a)/fi), clamp((b-t)/fo));
+}
+function show(id,t,fi,fo){ const a = sceneAlpha(t,S[id],fi,fo); $(id).style.opacity=a; $(id).style.display=a>0?'block':'none'; return a; }
+
+function seek(t){
+    // background
+    $('b1').style.transform=`translate(${-250+Math.sin(t*.4)*180}px,${-200+Math.cos(t*.3)*220}px)`;
+    $('b2').style.transform=`translate(${430+Math.cos(t*.35)*200}px,${1250+Math.sin(t*.45)*200}px)`;
+    $('grid').style.transform=`translateY(${(t*30)%90}px)`;
+    dots.forEach(d=>{
+        const y=((d.y - t*d.v)%1920+1920)%1920;
+        d.el.style.transform=`translate(${d.x+Math.sin(t+d.ph)*30}px,${y}px) scale(${d.s})`;
+        d.el.style.opacity=.15+.35*(.5+.5*Math.sin(t*2+d.ph));
+    });
+
+    // S1
+    if(show('s1',t,.01,.4)){
+        const lm=back(p(t,.2,.8));
+        set($('logoMark'),clamp(p(t,.2,.3)*3),`scale(${lm}) rotate(${(1-eo(p(t,.2,1)))*-90}deg)`);
+        const rg=p(t,.5,1.4);
+        set($('ring'),(1-rg)*.9,`scale(${.6+rg*.9})`);
+        letters.forEach((s,i)=>{ const k=eo(p(t,1.0+i*.06,.5)); s.style.opacity=k; s.style.transform=`translateY(${(1-k)*80}px)`; });
+        const tg=eo(p(t,1.9,.6)); set($('tag'),tg,`translateY(${(1-tg)*50}px)`);
+        const out=eio(p(t,3.9,.5)); $('s1').style.transform=`scale(${1+out*.15})`;
+    }
+
+    // S2
+    if(show('s2',t)){
+        const a=t-S.s2[0];
+        const q1=eo(p(a,.1,.6)); set($('q1'),q1,`translateY(${(1-q1)*-60}px)`);
+        bars.forEach((b,i)=>{ const k=back(p(a,.6+i*.12,.5)); const h=b.h*Math.max(0,k); b.r.setAttribute('y',400-h); b.r.setAttribute('height',h); });
+        trend.style.strokeDashoffset = tl*(1-eio(p(a,1.3,1.1)));
+        const q2=eo(p(a,2.3,.6)); set($('q2'),q2,`translateY(${(1-q2)*60}px)`);
+        const shake = a>2.6 && a<3.1 ? Math.sin(a*80)*10*(3.1-a)*2 : 0;
+        $('chart').style.transform=`translateX(${shake}px)`;
+        $('chart').style.opacity=1;
+    }
+
+    // S3
+    if(show('s3',t,.2,.35)){
+        const a=t-S.s3[0];
+        const h=back(p(a,.1,.6)); set($('help'),clamp(h),`scale(${.4+.6*h})`);
+        const e=back(p(a,.35,.6)); set($('helpEmoji'),clamp(e),`translateY(${(1-e)*120}px) rotate(${Math.sin(a*3)*8}deg)`);
+        const r=eo(p(a,.15,1.2));
+        rays.forEach((ray,i)=>{ ray.style.opacity=(1-r)*.9; ray.style.transform=`rotate(${i*22.5}deg) translateY(${160+r*420}px) scaleY(${1-r*.6})`; });
+    }
+
+    // S4
+    if(show('s4',t)){
+        const a=t-S.s4[0];
+        const ti=eo(p(a,.05,.5)); set($('svcTitle'),ti,`translateY(${(1-ti)*-50}px)`);
+        set($('svcSub'),eo(p(a,.35,.5)));
+        for(let i=0;i<4;i++){
+            const st=.9+i*1.6;
+            const k=back(p(a,st,.65));
+            const active = a>=st && a<st+1.6;
+            const glow = active ? 1 : 0;
+            const c=$('c'+i);
+            set(c,clamp(p(a,st,.25)*1.5),`translateX(${(1-k)*(i%2?1:-1)*700}px) scale(${1+glow*.03*Math.sin(clamp((a-st)/1.6)*Math.PI)})`);
+            c.style.borderColor = active ? 'rgba(0,170,255,.9)' : '#1c3048';
+            c.style.boxShadow = active ? '0 30px 90px rgba(0,170,255,.35)' : '0 30px 80px rgba(0,0,0,.4)';
+            const ic=c.querySelector('.ic'); const ik=back(p(a,st+.25,.5));
+            ic.style.transform=`scale(${clamp(ik,0,2)}) rotate(${(1-clamp(ik))*-40}deg)`;
+        }
+        // final settle: all highlighted
+        if(a>7.3){ for(let i=0;i<4;i++){ $('c'+i).style.borderColor='rgba(0,170,255,.6)'; } }
+    }
+
+    // S5
+    if(show('s5',t)){
+        const a=t-S.s5[0];
+        const ti=back(p(a,.05,.6)); set($('whyTitle'),clamp(ti),`scale(${.6+.4*ti})`);
+        for(let i=0;i<3;i++){
+            const st=.8+i*1.1;
+            const k=eo(p(a,st,.55)); const w=$('w'+i);
+            set(w,k,`translateY(${(1-k)*80}px)`);
+            const ck=back(p(a,st+.1,.5)); w.querySelector('.ck').style.transform=`scale(${clamp(ck,0,2)})`;
+            w.querySelector('.tick').style.strokeDashoffset = 24*(1-eio(p(a,st+.35,.45)));
+        }
+    }
+
+    // S6
+    if(show('s6',t,.35,.01)){
+        const a=t-S.s6[0];
+        const c1=eo(p(a,.05,.6)); set($('ctaTop'),c1,`translateY(${(1-c1)*-60}px)`);
+        set($('ctaSub'),eo(p(a,.45,.5)));
+        const b=back(p(a,.8,.7)); const pulse = a>1.6 ? 1+.035*Math.sin((a-1.6)*5) : 1;
+        set($('btn'),clamp(b*2),`scale(${clamp(b,0,2)*pulse})`);
+        const rp=((a-1.6)%1.25)/1.25;
+        set($('btnRing'), a>1.6 ? (1-rp)*.8 : 0, `scale(${1+rp*.25},${1+rp*.6})`);
+        const f=eo(p(a,1.8,.5)); const tap = a>2.3 ? Math.abs(Math.sin((a-2.3)*2.5))*-30 : 0;
+        set($('finger'),f,`translate(${(1-f)*200}px,${(1-f)*200+tap}px) rotate(-15deg)`);
+        set($('foot'),eo(p(a,2.4,.6)));
+        const fb=eo(p(a,2.7,.6)); set($('footBrand'),fb,`translateY(${(1-fb)*40}px)`);
+    }
+}
+window.DURATION = DURATION;
+window.seek = seek;
+seek(0);
+</script>
+</body>
+</html>
