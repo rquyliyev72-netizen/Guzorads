@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>G‘uzor Ads — Instagram kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07111f;
+  --card:#0d1c30;
+  --line:#1c3048;
+  --text:#ffffff;
+  --muted:#9eacbe;
+  --accent:#00aaff;
+  --accent-2:#6c5ce7;
+  --primary:#008cff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Manrope",Arial,sans-serif;background:#111;color:var(--text);padding:40px;display:flex;flex-direction:column;gap:40px}
+.asset{position:relative;overflow:hidden;flex:none}
+.gradient{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- Highlight covers (1080x1920, icon in the centre safe zone) ---------- */
+.hl{width:1080px;height:1920px;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 50%,#0f2744 0,var(--bg) 60%)}
+.hl-ring{width:620px;height:620px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.hl-ring svg{width:300px;height:300px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Posts (1080x1350) ---------- */
+.post{width:1080px;height:1350px;padding:96px 90px;display:flex;flex-direction:column;
+  background:
+    radial-gradient(circle at 85% 12%,#005cff55,transparent 38%),
+    radial-gradient(circle at 10% 90%,#00aaff33,transparent 35%),
+    var(--bg)}
+.post .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:70px}
+.brand{display:flex;align-items:center;gap:18px;font-weight:800;font-size:38px;letter-spacing:1px}
+.brand svg{width:64px;height:64px;border-radius:16px}
+.tag{padding:14px 30px;border:2px solid var(--accent);border-radius:40px;color:var(--accent);font-weight:700;font-size:30px}
+.post h2{font-size:108px;line-height:1.04;font-weight:800;letter-spacing:-1px;margin-bottom:40px}
+.post p.lead{font-size:42px;line-height:1.45;color:#b8c5d6;max-width:860px}
+.post .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:32px;color:var(--muted);font-weight:600}
+.post .foot b{color:#fff}
+.cta{padding:22px 38px;border-radius:20px;background:var(--primary);color:#fff;font-weight:800;font-size:30px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:30px}
+.tile{background:linear-gradient(145deg,#102641,#091827);border:2px solid var(--line);border-radius:28px;padding:28px 32px}
+.tile .ic{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.tile .ic svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{font-size:42px;font-weight:800;margin-bottom:8px}
+.tile p{font-size:29px;color:var(--muted);line-height:1.4}
+.steps{display:flex;flex-direction:column;gap:24px}
+.step{display:flex;gap:30px;align-items:center;background:linear-gradient(145deg,#102641,#091827);border:2px solid var(--line);border-radius:28px;padding:36px 40px}
+.step .n{flex:none;width:86px;height:86px;border-radius:50%;display:grid;place-items:center;font-size:40px;font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.step h3{font-size:46px;font-weight:800}
+.step p{font-size:31px;color:var(--muted);line-height:1.35}
+.plans{display:flex;flex-direction:column;gap:22px}
+.plan{border:2px solid var(--line);border-radius:28px;padding:40px 42px;background:linear-gradient(145deg,#102641,#091827)}
+.plan.hot{border-color:var(--accent);box-shadow:0 0 0 2px #00aaff33,0 20px 60px #008cff33}
+.plan .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.plan h3{font-size:52px;font-weight:800}
+.plan .pill{font-size:22px;font-weight:800;padding:8px 18px;border-radius:30px;background:var(--primary)}
+.plan p{font-size:32px;color:var(--muted);line-height:1.4}
+.stats{display:flex;gap:24px;margin-top:60px}
+.stat{flex:1;border:2px solid var(--line);border-radius:28px;padding:30px;background:#0d1c30aa}
+.stat strong{display:block;font-size:76px;font-weight:800}
+.stat span{font-size:29px;color:var(--muted)}
+.chart{display:flex;align-items:flex-end;gap:22px;height:420px;margin-top:60px}
+.chart i{flex:1;border-radius:16px 16px 6px 6px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+.qa{border-left:6px solid var(--accent);padding:8px 0 8px 34px;margin-bottom:48px}
+.qa h3{font-size:46px;font-weight:800;margin-bottom:8px}
+.qa p{font-size:33px;color:var(--muted);line-height:1.4}
+.contact{display:flex;flex-direction:column;gap:22px;margin-top:50px}
+.contact div{display:flex;align-items:center;gap:26px;font-size:48px;font-weight:800;background:linear-gradient(145deg,#102641,#091827);border:2px solid var(--line);border-radius:28px;padding:28px 34px}
+.contact small{display:block;font-size:28px;color:var(--muted);font-weight:600}
+.contact .ic{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.contact .ic svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+
+<!-- Logo: avatar (1080x1080, safe for the circle crop) -->
+<div class="asset" id="logo-avatar" style="width:1080px;height:1080px" data-logo="avatar"></div>
+<!-- Logo: transparent mark -->
+<div class="asset" id="logo-mark" style="width:1080px;height:1080px" data-logo="mark"></div>
+<!-- Logo: horizontal lockup -->
+<div class="asset" id="logo-full" style="width:1600px;height:600px;background:var(--bg);display:flex;align-items:center;gap:56px;padding:0 110px">
+  <div data-logo="tile" style="width:340px;height:340px;flex:none"></div>
+  <div>
+    <div style="font-size:150px;font-weight:800;letter-spacing:4px;line-height:1">G‘UZOR <span class="gradient">ADS</span></div>
+    <div style="font-size:44px;color:var(--muted);font-weight:600;letter-spacing:12px;margin-top:22px">MARKETING AGENCY</div>
+  </div>
+</div>
+
+<div id="highlights" style="display:flex;gap:40px;flex-wrap:wrap"></div>
+
+<!-- Post 1 — Biz kimmiz -->
+<div class="asset post" id="post-1">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Tanishing 👋</div></div>
+  <h2>Biznesingizni <span class="gradient">raqamli dunyoda</span> rivojlantiramiz</h2>
+  <p class="lead">G‘uzor Ads — SMM, target reklama, kontent va grafik dizayn bo‘yicha zamonaviy marketing agentligi.</p>
+  <div class="stats">
+    <div class="stat"><strong class="gradient">6</strong><span>Xizmat yo‘nalishi</span></div>
+    <div class="stat"><strong class="gradient">24/7</strong><span>Aloqa</span></div>
+    <div class="stat"><strong class="gradient">100%</strong><span>Individual yondashuv</span></div>
+  </div>
+  <div class="foot"><span>Bepul maslahat — <b>@GuzorAds</b></span><span class="cta">Yozing →</span></div>
+</div>
+
+<!-- Post 2 — Xizmatlar -->
+<div class="asset post" id="post-2">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Xizmatlar</div></div>
+  <h2 style="font-size:84px;margin-bottom:34px">Hammasi <span class="gradient">bir joyda</span></h2>
+  <div class="grid2">
+    <div class="tile"><div class="ic" data-icon="phone"></div><h3>SMM</h3><p>Sahifangizni professional yuritamiz</p></div>
+    <div class="tile"><div class="ic" data-icon="target"></div><h3>Target</h3><p>Reklama aynan mijozingizga</p></div>
+    <div class="tile"><div class="ic" data-icon="play"></div><h3>Kontent</h3><p>Reels, Stories va postlar</p></div>
+    <div class="tile"><div class="ic" data-icon="pen"></div><h3>Dizayn</h3><p>Banner, post, reklama</p></div>
+    <div class="tile"><div class="ic" data-icon="star"></div><h3>Brending</h3><p>Logotip va yagona uslub</p></div>
+    <div class="tile"><div class="ic" data-icon="bulb"></div><h3>Maslahat</h3><p>Strategiya va tahlil</p></div>
+  </div>
+  <div class="foot"><span>Batafsil — <b>Direct</b> yoki <b>Telegram</b></span></div>
+</div>
+
+<!-- Post 3 — Bepul maslahat (CTA) -->
+<div class="asset post" id="post-3">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">🎁 Bepul</div></div>
+  <h2>Birinchi maslahat — <span class="gradient">mutlaqo bepul</span></h2>
+  <p class="lead">Biznesingizni ko‘rib chiqamiz va qaysi yo‘nalish ko‘proq mijoz olib kelishini aytamiz.</p>
+  <div class="contact">
+    <div><span class="ic" data-icon="send"></span><span><small>Telegram</small>@GuzorAds</span></div>
+    <div><span class="ic" data-icon="call"></span><span><small>Telefon</small>+998 95 008 35 07</span></div>
+  </div>
+  <div class="foot"><span>Profildagi havola orqali yozing</span><span class="cta">Bog‘lanish →</span></div>
+</div>
+
+<!-- Post 4 — Ish jarayoni -->
+<div class="asset post" id="post-4">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Jarayon</div></div>
+  <h2 style="font-size:96px">Qanday <span class="gradient">ishlaymiz?</span></h2>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><div><h3>Tanishuv</h3><p>Biznesingiz va maqsadlaringiz haqida suhbat</p></div></div>
+    <div class="step"><span class="n">2</span><div><h3>Tahlil va reja</h3><p>Raqobatchi va auditoriya tahlili, aniq strategiya</p></div></div>
+    <div class="step"><span class="n">3</span><div><h3>Ishga tushirish</h3><p>Kontent, sahifa yuritish va reklama</p></div></div>
+    <div class="step"><span class="n">4</span><div><h3>Natija va hisobot</h3><p>Tahlil qilib, reklamani doimiy yaxshilaymiz</p></div></div>
+  </div>
+</div>
+
+<!-- Post 5 — Paketlar -->
+<div class="asset post" id="post-5">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Paketlar</div></div>
+  <h2 style="font-size:96px">O‘zingizga <span class="gradient">mos paket</span></h2>
+  <div class="plans">
+    <div class="plan"><div class="row"><h3>Start</h3></div><p>Sahifa dizayni · Oyiga 12 post · Stories · Oylik hisobot</p></div>
+    <div class="plan hot"><div class="row"><h3>Biznes</h3><span class="pill">Eng ko‘p tanlanadi</span></div><p>To‘liq SMM · 20 post + Reels · Target reklama · Haftalik hisobot</p></div>
+    <div class="plan"><div class="row"><h3>Premium</h3></div><p>Biznes + brending, video kontent, bir nechta platforma, shaxsiy menejer</p></div>
+  </div>
+  <div class="foot"><span>Narxini bilish — <b>Direct</b>ga “PAKET” deb yozing</span></div>
+</div>
+
+<!-- Post 6 — Natija -->
+<div class="asset post" id="post-6">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Target reklama</div></div>
+  <h2>Reklama emas — <span class="gradient">mijoz</span> olib kelamiz</h2>
+  <p class="lead">Byudjetingiz qayerga ketayotganini va har bir murojaat narxini shaffof hisobotda ko‘rasiz.</p>
+  <div class="chart"><i style="height:22%"></i><i style="height:35%"></i><i style="height:31%"></i><i style="height:52%"></i><i style="height:66%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
+  <div class="foot"><span>Instagram · Telegram · Facebook</span><span class="cta">Boshlash →</span></div>
+</div>
+
+<!-- Post 7 — FAQ -->
+<div class="asset post" id="post-7">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Savol-javob</div></div>
+  <h2 style="font-size:96px;margin-bottom:56px">Ko‘p <span class="gradient">so‘raladi</span></h2>
+  <div class="qa"><h3>Natija qachon ko‘rinadi?</h3><p>Targetdan murojaatlar bir necha kunda, SMM o‘sishi 1–3 oyda.</p></div>
+  <div class="qa"><h3>Reklama byudjeti narxga kiradimi?</h3><p>Yo‘q, alohida. Uni to‘g‘ri rejalashtirishga yordam beramiz.</p></div>
+  <div class="qa"><h3>Boshqa shaharlar bilan ishlaysizmi?</h3><p>Ha, barcha ishlar onlayn — butun O‘zbekiston bo‘ylab.</p></div>
+  <div class="foot"><span>Savolingiz bormi? <b>@GuzorAds</b></span></div>
+</div>
+
+<!-- Post 8 — Dizayn -->
+<div class="asset post" id="post-8">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Grafik dizayn</div></div>
+  <h2>Birinchi taassurot — <span class="gradient">dizayndan</span></h2>
+  <p class="lead">Post, banner va reklama kreativlari brendingiz uslubida — chiroyli va sotadigan.</p>
+  <div style="display:flex;gap:24px;margin-top:70px;height:440px">
+    <div class="tile" style="flex:1.3;display:grid;place-items:center"><div class="ic" data-icon="pen" style="width:120px;height:120px;border-radius:32px"></div></div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:24px">
+      <div class="tile" style="flex:1;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none"></div>
+      <div class="tile" style="flex:1"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Logotip · Post · Banner</span></div>
+</div>
+
+<!-- Post 9 — Reels / kontent -->
+<div class="asset post" id="post-9">
+  <div class="top"><div class="brand" data-brand></div><div class="tag">Kontent</div></div>
+  <h2>Reels — eng tez <span class="gradient">o‘sish yo‘li</span></h2>
+  <p class="lead">Ssenariy, suratga olish g‘oyalari va montaj — auditoriyangiz to‘xtab ko‘radigan kontent.</p>
+  <div style="display:flex;gap:24px;margin-top:70px;height:440px">
+    <div class="tile" style="flex:1;display:grid;place-items:center"><div class="ic" data-icon="play" style="width:110px;height:110px;border-radius:50%"></div></div>
+    <div class="tile" style="flex:1;display:grid;place-items:center"><div class="ic" data-icon="phone" style="width:110px;height:110px;border-radius:50%"></div></div>
+    <div class="tile" style="flex:1;display:grid;place-items:center"><div class="ic" data-icon="star" style="width:110px;height:110px;border-radius:50%"></div></div>
+  </div>
+  <div class="foot"><span>Reels · Stories · Post</span></div>
+</div>
+
+<script>
+// Line icons (24x24 grid)
+const ICONS = {
+  phone:  '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
+  play:   '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M10 9v6l5-3z"/>',
+  pen:    '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/>',
+  star:   '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  bulb:   '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  send:   '<path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M21 3l-11 10"/>',
+  call:   '<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>',
+  box:    '<path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5L12 12l9-4.5M12 12v9"/>',
+  grid:   '<rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/>',
+  chart:  '<path d="M3 21h18"/><path d="M6 17v-4M11 17V9M16 17v-6M20 6l-4 4-4-3-6 5"/>',
+  chat:   '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+  steps:  '<circle cx="5" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h3a2 2 0 0 1 2 2v2M14 12h3a2 2 0 0 1 2 2v2"/>',
+  help:   '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".6"/>',
+};
+const icon = (name, attrs='') => `<svg viewBox="0 0 24 24" ${attrs}>${ICONS[name]}</svg>`;
+
+// G‘uzor Ads logo mark: rounded "G" with a growth arrow breaking out of the opening
+let uid = 0;
+function logo({bg = true, rounded = 0} = {}){
+  const id = 'l' + (uid++);
+  return `<svg viewBox="0 0 1080 1080" width="100%" height="100%">
+    <defs>
+      <linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00aaff"/><stop offset="1" stop-color="#6c5ce7"/></linearGradient>
+      <radialGradient id="${id}b" cx=".3" cy=".25" r=".95"><stop offset="0" stop-color="#11305a"/><stop offset="1" stop-color="#07111f"/></radialGradient>
+    </defs>
+    ${bg ? `<rect width="1080" height="1080" rx="${rounded}" fill="url(#${id}b)"/>` : ''}
+    <g transform="translate(0 0)">
+      <path d="M731 349 A270 270 0 1 0 810 540 H580" fill="none" stroke="url(#${id}g)" stroke-width="120" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="838" cy="300" r="52" fill="#ffffff"/>
+    </g>
+  </svg>`;
+}
+
+document.querySelectorAll('[data-logo]').forEach(el => {
+  const kind = el.dataset.logo;
+  el.innerHTML = logo({bg: kind !== 'mark', rounded: kind === 'tile' ? 240 : 0});
+});
+document.querySelectorAll('[data-brand]').forEach(el => {
+  el.innerHTML = `<span style="width:64px;height:64px;display:block">${logo({rounded:240})}</span>G‘UZOR ADS`;
+});
+document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = icon(el.dataset.icon); });
+
+// Highlight covers — order matches the profile
+const HIGHLIGHTS = [
+  ['xizmatlar', 'Xizmatlar', 'grid'],
+  ['paketlar',  'Paketlar',  'box'],
+  ['ishlar',    'Ishlarimiz','star'],
+  ['natija',    'Natijalar', 'chart'],
+  ['fikrlar',   'Fikrlar',   'chat'],
+  ['jarayon',   'Jarayon',   'steps'],
+  ['savollar',  'Savollar',  'help'],
+  ['aloqa',     'Aloqa',     'send'],
+];
+document.getElementById('highlights').innerHTML = HIGHLIGHTS.map(([id, , ic]) =>
+  `<div class="asset hl" id="hl-${id}"><div class="hl-ring">${icon(ic)}</div></div>`).join('');
+window.HIGHLIGHTS = HIGHLIGHTS;
+</script>
+</body>
+</html>
