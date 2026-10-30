@@ -14,6 +14,7 @@ Ranglar va shrift saytdagi bilan bir xil (`#07111f` fon, `#00aaff → #6c5ce7` g
 | `export/logo-full.png` | To‘liq logotip (Telegram, sayt, banner) |
 | `export/highlights/*.png` | 8 ta highlight muqovasi (1080×1920) |
 | `export/posts/post-1…9.png` | Birinchi 9 ta post (1080×1350, 4:5) |
+| `export/stories/*.png` | 10 ta stories shabloni (1080×1920) |
 | `preview.html` | Profil qanday ko‘rinishini ko‘rsatuvchi maket |
 
 Matnni o‘zgartirish kerak bo‘lsa — `kit.html` ni tahrirlang va `node instagram/build.js` buyrug‘i bilan PNG larni qayta yarating.
@@ -95,7 +96,28 @@ Keyin `post-1`, `post-2`, `post-3` ni **Pin to profile** qiling — ular doim te
 | 8 | Grafik dizayn | “Birinchi taassurot dizayndan boshlanadi 🎨” |
 | 9 | Reels | “Reels — sahifani o‘stirishning eng tez yo‘li 🎬” |
 
-## 5. Xeshteglar
+## 5. Stories shablonlari
+
+Barchasi 1080×1920. Matnlar ekranning tepa va pastki ~250px qismidan chetda turadi — u yerni Instagram’ning o‘z tugmalari yopadi.
+Shtrixli (punktir) ramka — stiker yoki rasm qo‘yiladigan joy.
+
+| Fayl | Qachon ishlatiladi | Ustiga nima qo‘yiladi |
+|---|---|---|
+| `yangi-post.png` | Yangi post chiqqanda | Postni stories’ga ulashing va ramka ustiga joylang |
+| `savol.png` | Savol-javob kuni | **Questions** stikeri |
+| `sorovnoma.png` | Auditoriya bilan muloqot | **Poll** yoki **Quiz** stikeri (masalan: “Target / SMM”) |
+| `oldin-keyin.png` | Keys ko‘rsatish | Ikki rasm: oldingi va keyingi sahifa/dizayn |
+| `fikr.png` | Mijoz fikri | Matn va mijoz rasmini o‘zgartiring (yoki yozishma skrinshotini qo‘ying) |
+| `natija.png` | Reklama natijasi | Raqamlar namunaviy — `kit.html` da haqiqiy natijaga almashtiring |
+| `maslahat.png` | Foydali maslahat | `#1`, sarlavha va matnni har safar yangilang |
+| `xizmat.png` | Xizmat reklamasi | — (tayyor) |
+| `cta.png` | Bepul maslahat taklifi | **Link** stikeri → `t.me/GuzorAds` |
+| `ramka.png` | Har qanday foto/video ustidan | Shaffof ramka: video yoki rasmni qo‘yib, ramkani ustiga joylang |
+
+Matnni o‘zgartirish: `kit.html` dagi `STORIES` bo‘limini tahrirlang → `node instagram/build.js`.
+Telefonda tezkor ishlash uchun shablonni stories’ga fon qilib qo‘ying va ustidan Instagram’ning matn vositasi bilan yozing.
+
+## 6. Xeshteglar
 
 ```
 #guzorads #guzor #qarshi #qashqadaryo #smm #smmuz #targetreklama #target_uz
@@ -103,7 +125,7 @@ Keyin `post-1`, `post-2`, `post-3` ni **Pin to profile** qiling — ular doim te
 ```
 Har postga 5–10 ta mos xeshteg qo‘ying, hammasini birdan emas.
 
-## 6. Haftalik kontent reja
+## 7. Haftalik kontent reja
 
 | Kun | Format | Mavzu |
 |---|---|---|

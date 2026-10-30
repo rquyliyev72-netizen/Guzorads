@@ -8,7 +8,7 @@ const dir = __dirname;
 const out = path.join(dir, 'export');
 
 (async () => {
-  for (const sub of ['', 'highlights', 'posts']) fs.mkdirSync(path.join(out, sub), { recursive: true });
+  for (const sub of ['', 'highlights', 'posts', 'stories']) fs.mkdirSync(path.join(out, sub), { recursive: true });
 
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1800, height: 1200 } });
@@ -19,8 +19,10 @@ const out = path.join(dir, 'export');
   for (const id of ids) {
     const file = id.startsWith('hl-') ? `highlights/${id.slice(3)}.png`
       : id.startsWith('post-') ? `posts/${id}.png`
+      : id.startsWith('story-') ? `stories/${id.slice(6)}.png`
       : `${id}.png`;
-    const transparent = id === 'logo-mark';
+    const transparent = id === 'logo-mark' || id === 'story-ramka';
+    await page.evaluate(t => { document.body.style.background = t ? 'transparent' : ''; }, transparent);
     await page.locator('#' + id).screenshot({ path: path.join(out, file), omitBackground: transparent });
     console.log('✓', file);
   }

@@ -78,6 +78,34 @@ body{font-family:"Manrope",Arial,sans-serif;background:#111;color:var(--text);pa
 .contact small{display:block;font-size:28px;color:var(--muted);font-weight:600}
 .contact .ic{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
 .contact .ic svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Stories (1080x1920; keep text out of the top/bottom 250px UI zones) ---------- */
+.story{width:1080px;height:1920px;padding:260px 90px 270px;display:flex;flex-direction:column;
+  background:
+    radial-gradient(circle at 90% 8%,#005cff66,transparent 35%),
+    radial-gradient(circle at 5% 95%,#00aaff3a,transparent 35%),
+    var(--bg)}
+.story .shead{position:absolute;top:110px;left:90px;right:90px;display:flex;justify-content:space-between;align-items:center}
+.story .sfoot{position:absolute;bottom:120px;left:90px;right:90px;text-align:center;font-size:32px;color:var(--muted);font-weight:600}
+.story .sfoot b{color:#fff}
+.story h2{font-size:112px;line-height:1.04;font-weight:800;letter-spacing:-1px;margin-bottom:40px}
+.story p.lead{font-size:44px;line-height:1.45;color:#b8c5d6}
+.slot{border-radius:40px;background:#0d1c30aa;border:3px dashed #2a4a6e;flex:1;margin-top:60px}
+.slot.solid{border-style:solid;border-color:var(--line)}
+.pointer{text-align:center;font-size:40px;font-weight:700;color:var(--accent);margin-top:40px}
+.ba{display:flex;gap:24px;flex:1;margin-top:50px}
+.ba > div{flex:1;display:flex;flex-direction:column;gap:20px}
+.ba span{align-self:flex-start;padding:12px 28px;border-radius:30px;font-size:30px;font-weight:800;background:#1c3048}
+.ba span.after{background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+.ba .slot{margin-top:0}
+.quote{font-size:300px;line-height:.6;font-weight:800;height:150px}
+.big-n{font-size:340px;line-height:.9;font-weight:800}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:60px}
+.kpis .stat{padding:40px}
+.kpis .stat strong{font-size:90px}
+.kpis .stat span{font-size:32px}
+.frame{background:transparent!important;padding:0}
+.frame .bar{position:absolute;left:0;right:0;height:300px}
 </style>
 </head>
 <body>
@@ -206,6 +234,115 @@ body{font-family:"Manrope",Arial,sans-serif;background:#111;color:var(--text);pa
     <div class="tile" style="flex:1;display:grid;place-items:center"><div class="ic" data-icon="star" style="width:110px;height:110px;border-radius:50%"></div></div>
   </div>
   <div class="foot"><span>Reels · Stories · Post</span></div>
+</div>
+
+
+<!-- ================= STORIES ================= -->
+<div style="display:flex;gap:40px;flex-wrap:wrap">
+
+<!-- Story 1 — Yangi post -->
+<div class="asset story" id="story-yangi-post">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Yangi post</div></div>
+  <h2>Yangi postni <span class="gradient">ko‘rdingizmi?</span></h2>
+  <div class="slot solid"></div>
+  <div class="pointer">Postni bosing va o‘qing ↑</div>
+</div>
+
+<!-- Story 2 — Savol-javob -->
+<div class="asset story" id="story-savol">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Savol-javob</div></div>
+  <h2>Marketing bo‘yicha <span class="gradient">savolingiz</span> bormi?</h2>
+  <p class="lead">Yozing — eng qiziqarli savollarga stories’da javob beramiz.</p>
+  <div class="pointer" style="margin-top:auto">👇</div>
+  <div class="slot" style="flex:0 0 420px;margin-top:20px"></div>
+</div>
+
+<!-- Story 3 — So‘rovnoma -->
+<div class="asset story" id="story-sorovnoma">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">So‘rovnoma</div></div>
+  <h2>Sizga qaysi biri <span class="gradient">ko‘proq</span> mijoz olib keladi?</h2>
+  <p class="lead">Ovoz bering — natijani ertaga ulashamiz.</p>
+  <div class="slot" style="flex:0 0 460px;margin-top:auto"></div>
+</div>
+
+<!-- Story 4 — Oldin / Keyin -->
+<div class="asset story" id="story-oldin-keyin">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Keys</div></div>
+  <h2 style="font-size:100px">Oldin <span class="gradient">va keyin</span></h2>
+  <div class="ba">
+    <div><span>Oldin</span><div class="slot solid"></div></div>
+    <div><span class="after">Keyin</span><div class="slot solid"></div></div>
+  </div>
+</div>
+
+<!-- Story 5 — Mijoz fikri -->
+<div class="asset story" id="story-fikr">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Mijoz fikri</div></div>
+  <div class="quote gradient">“</div>
+  <h2 style="font-size:76px;line-height:1.2;font-weight:700">Mijoz fikrini shu yerga yozing — 2–3 qator, qisqa va aniq.</h2>
+  <div style="margin-top:auto;display:flex;align-items:center;gap:30px">
+    <div style="width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2))"></div>
+    <div><div style="font-size:48px;font-weight:800">Ism Familiya</div><div style="font-size:34px;color:var(--muted)">Biznes nomi · shahar</div></div>
+  </div>
+</div>
+
+<!-- Story 6 — Natijalar -->
+<div class="asset story" id="story-natija">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Natija</div></div>
+  <h2><span class="gradient">30 kunda</span> erishgan natijamiz</h2>
+  <p class="lead">Loyiha: biznes nomi</p>
+  <div class="kpis">
+    <div class="stat"><strong class="gradient">+240</strong><span>Murojaat</span></div>
+    <div class="stat"><strong class="gradient">12 500</strong><span>so‘m / lead</span></div>
+    <div class="stat"><strong class="gradient">85K</strong><span>Qamrov</span></div>
+    <div class="stat"><strong class="gradient">+1 300</strong><span>Obunachi</span></div>
+  </div>
+  <div class="chart" style="height:auto;flex:1"><i style="height:25%"></i><i style="height:38%"></i><i style="height:34%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:100%"></i></div>
+</div>
+
+<!-- Story 7 — Foydali maslahat -->
+<div class="asset story" id="story-maslahat">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">💡 Maslahat</div></div>
+  <div class="big-n gradient">#1</div>
+  <h2 style="margin-top:30px">Bio’da aniq <span class="gradient">taklif</span> bo‘lsin</h2>
+  <p class="lead">Mijoz 3 soniyada nima sotayotganingizni, qayerdaligingizni va qanday buyurtma berishni tushunishi kerak.</p>
+  <div class="sfoot" style="position:static;margin-top:auto">Saqlab qo‘ying 🔖 · Do‘stingizga yuboring ↗</div>
+</div>
+
+<!-- Story 8 — Xizmat reklamasi -->
+<div class="asset story" id="story-xizmat">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">Xizmat</div></div>
+  <div class="tile" style="align-self:flex-start;padding:0;border:none;background:none"><div class="ic" data-icon="target" style="width:150px;height:150px;border-radius:40px;margin-bottom:50px"></div></div>
+  <h2>Target <span class="gradient">reklama</span></h2>
+  <p class="lead" style="margin-bottom:50px">Reklamangizni aynan mahsulotingizga qiziqadigan odamlarga ko‘rsatamiz.</p>
+  <div class="steps">
+    <div class="step"><span class="n">✓</span><div><h3>Auditoriya tahlili</h3></div></div>
+    <div class="step"><span class="n">✓</span><div><h3>Kreativ dizayn</h3></div></div>
+    <div class="step"><span class="n">✓</span><div><h3>Shaffof hisobot</h3></div></div>
+  </div>
+</div>
+
+<!-- Story 9 — Bepul maslahat (link sticker) -->
+<div class="asset story" id="story-cta">
+  <div class="shead"><div class="brand" data-brand></div><div class="tag">🎁 Bepul</div></div>
+  <h2 style="font-size:130px">Birinchi maslahat — <span class="gradient">bepul</span></h2>
+  <p class="lead">Biznesingizni ko‘rib chiqib, qaysi yo‘nalish foyda berishini aytamiz.</p>
+  <div class="contact">
+    <div><span class="ic" data-icon="send"></span><span><small>Telegram</small>@GuzorAds</span></div>
+    <div><span class="ic" data-icon="call"></span><span><small>Telefon</small>+998 95 008 35 07</span></div>
+  </div>
+  <div class="pointer" style="margin-top:auto">Havolani bosing 👇</div>
+  <div class="slot" style="flex:0 0 160px;margin-top:20px;border-radius:30px"></div>
+</div>
+
+<!-- Story 10 — Foto/video uchun shaffof ramka -->
+<div class="asset story frame" id="story-ramka">
+  <div class="bar" style="top:0;background:linear-gradient(180deg,#07111fee,transparent)"></div>
+  <div class="bar" style="bottom:0;background:linear-gradient(0deg,#07111fee,transparent)"></div>
+  <div class="shead"><div class="brand" data-brand></div><div class="tag" style="background:#07111f99">G‘uzor Ads</div></div>
+  <div class="sfoot" style="color:#fff">Bepul maslahat — <b>@GuzorAds</b></div>
+</div>
+
 </div>
 
 <script>
